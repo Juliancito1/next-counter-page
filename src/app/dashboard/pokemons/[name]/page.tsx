@@ -5,7 +5,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 interface Props {
-  params: { name: string };
+  params: Promise<{ name: string }>;
 }
 
 export async function generateStaticParams() {
@@ -22,7 +22,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
   try {
     const { id, name } = await getPokemon(params.name);
     return {
@@ -50,7 +51,8 @@ const getPokemon = async (name: string): Promise<Pokemon> => {
   }
 };
 
-export default async function PokemonPage({ params }: Props) {
+export default async function PokemonPage(props: Props) {
+  const params = await props.params;
   const pokemon = await getPokemon(params.name);
 
   return (
