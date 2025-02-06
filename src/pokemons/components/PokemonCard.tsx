@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const PokemonCard = ({ pokemon }: Props) => {
-  const { id, name } = pokemon;
+  const { name } = pokemon;
 
   return (
     <div className="mx-auto right-0 mt-2 w-60">
@@ -28,7 +28,7 @@ export const PokemonCard = ({ pokemon }: Props) => {
           <p className="text-sm text-gray-100">John@Doe.com</p>
           <div className="mt-5">
             <Link
-              href={`pokemon/${id}`}
+              href={`pokemons/${name}`}
               className="border rounded-full py-2 px-4 text-xs font-semibold text-gray-100"
             >
               Más información
