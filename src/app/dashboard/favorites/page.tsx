@@ -1,10 +1,10 @@
 import { FavoritePokemons } from "@/pokemons";
 
-// export const metadata = {
-//   title: "Favoritos",
-//   description:
-//     "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique praesentium repudiandae asperiores libero consequatur ea cumque voluptate. Veritatis nostrum recusandae blanditiis, aspernatur omnis aperiam molestias, obcaecati, in doloribus assumenda quas.",
-// };
+export const metadata = {
+  title: "Favoritos",
+  description:
+    "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique praesentium repudiandae asperiores libero consequatur ea cumque voluptate. Veritatis nostrum recusandae blanditiis, aspernatur omnis aperiam molestias, obcaecati, in doloribus assumenda quas.",
+};
 
 export default async function PokemonsPage() {
   return (
